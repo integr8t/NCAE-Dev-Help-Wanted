@@ -1,24 +1,22 @@
+from __future__ import annotations
+
 def remove_odds(nums: set[int]) -> set[int]:
-    """ remove all off numbers from a set of integers
-
-    Args:
-        nums (set): set of integers to remove odd numbers from
-
-    Returns:
-        set[int]: set of integers without odd numbers
-    """
-    #TODO: implement this function
-    return set()
+    result = set()
+    for i in nums:
+        if i % 2 == 0:
+            result.add(i)
+    return result
 
 def vowel_captilization(string: str) -> str:
-    """ capitalize all vowels in a string and lowercase all consonants
-
-    Args:
-        string (str): string to capitalize
-
-    Returns:
-        str: string with all vowels capitalized and all consonants lowercased
-    """
+    vowels = set("aeiouAEIOU")
+    result = []
+    for i in string:
+        if i in vowels:
+            result.append(i.upper())
+        elif i.isalpha():
+            result.append(i.lower())
+        else:
+            result.append(i)
     #TODO: implement this function
-    return ""
+    return "".join(result)
 
